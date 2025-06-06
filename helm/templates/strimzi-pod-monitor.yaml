@@ -27,7 +27,7 @@ spec:
       app.kubernetes.io/name: entity-operator
   namespaceSelector:
     matchNames:
-      - srimzi
+      - strimzi
   podMetricsEndpoints:
   - path: /metrics
     port: healthcheck
