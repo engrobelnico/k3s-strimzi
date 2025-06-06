@@ -1,0 +1,6 @@
+strimzi-kafka-operator:
+  
+  dashboards:
+    enabled: true
+    namespace: prometheus
+   
