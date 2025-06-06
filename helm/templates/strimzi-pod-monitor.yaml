@@ -44,10 +44,10 @@ spec:
       strimzi.io/kind: KafkaBridge
   namespaceSelector:
     matchNames:
-      - strimzi
+      - strimzi # Ensure this is the namespace where your KafkaBridge 'lv-bridge' is deployed
   podMetricsEndpoints:
   - path: /metrics
-    port: rest-api
+    port: http # Strimzi KafkaBridge service typically names the metrics port (8080) 'http'
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
