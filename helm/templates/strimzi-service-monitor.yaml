@@ -11,6 +11,7 @@ metadata:
     # release: prometheus-stack
     # team: my-monitoring-team
     app.kubernetes.io/name: lv-cluster-kafka-exporter
+    serviceMonitorSelector: prometheus
 spec:
   selector:
     matchLabels:
