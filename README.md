@@ -14,3 +14,15 @@ kctl -n strimzi run kafka-producer -ti --image=quay.io/strimzi/kafka:0.46.0-kafk
 
 # test receive
 kctl -n strimzi run kafka-consumer -ti --image=quay.io/strimzi/kafka:0.46.0-kafka-4.0.0 --rm=true --restart=Never -- bin/kafka-console-consumer.sh --bootstrap-server lv-cluster-kafka-bootstrap:9092 --topic my-topic --from-beginning
+
+kctl get pods -l 'strimzi.io/cluster=lv-cluster' --all-namespaces
+kctl get pods -l 'strimzi.io/kind=KafkaBridge' --all-namespaces
+kctl get pods -l 'strimzi.io/kind=cluster-operator' --all-namespaces
+kctl get pods -l 'app.kubernetes.io/name=entity-operator' --all-namespaces
+kctl get podmonitors -A -l app=strimzi
+kctl logs -n prometheus -l app.kubernetes.io/name=prometheus | grep kafka # Adjust label selector if needed
+kctl get svc lv-bridge-bridge-service -n strimzi -o yaml
+
+
+
+
