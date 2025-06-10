@@ -1,7 +1,7 @@
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: v-bridge-http
+  name: lv-bridge-http
   namespace: strimzi
   annotations:
     # spec.ingressClassName: traefik # This was an incorrect placement for ingressClassName
