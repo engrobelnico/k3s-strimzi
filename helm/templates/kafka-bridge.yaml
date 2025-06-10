@@ -17,6 +17,8 @@ spec:
           value: lv-bridge-otel-service
         - name: OTEL_EXPORTER_OTLP_ENDPOINT
           value: "http://otel-opentelemetry-collector.opensearch.svc.cluster.local:4318"
+        - name: OTEL_EXPORTER_OTLP_INSECURE
+          value: "true"
           
   tracing:
     type: opentelemetry
