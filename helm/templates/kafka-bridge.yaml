@@ -8,3 +8,12 @@ spec:
   http:
     port: 8080
   enableMetrics: true
+  template:
+    bridgeContainer:
+      env:
+        - name: OTEL_SERVICE_NAME
+          value: lv-bridge-otel-service
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: http://otel-opentelemetry-collector.opensearch.svc.cluster.local:4317
+  tracing:
+    type: opentelemetry

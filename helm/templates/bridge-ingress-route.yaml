@@ -1,0 +1,22 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: v-bridge-http
+  namespace: strimzi
+  annotations:
+    # spec.ingressClassName: traefik # This was an incorrect placement for ingressClassName
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.middlewares: opensearch-stripprefix-otel@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: kube.local
+      http:
+        paths:
+          - path: /kafka-bridge
+            pathType: Prefix
+            backend:
+              service:
+                name: lv-bridge-bridge-service
+                port:
+                  number: 8080
