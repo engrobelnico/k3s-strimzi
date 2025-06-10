@@ -4,7 +4,7 @@ metadata:
   name: lv-bridge
 spec:
   replicas: 1
-  bootstrapServers: lv-cluster-kafka-bootstrap.strimzi.svc.cluster.local:9093
+  bootstrapServers: lv-cluster-kafka-bootstrap.strimzi.svc.cluster.local:9092
   http:
     port: 8080
   enableMetrics: true
