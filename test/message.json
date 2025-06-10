@@ -1,0 +1,15 @@
+{
+    "records": [
+        {
+            "key": "my-key",
+            "value": "sales-lead-0001",
+            "partition": 2,
+            "headers": [
+              {
+                "key": "key1",
+                "value": "QXBhY2hlIEthZmthIGlzIHRoZSBib21iIQ=="
+              }
+            ]
+        }
+    ]
+}
